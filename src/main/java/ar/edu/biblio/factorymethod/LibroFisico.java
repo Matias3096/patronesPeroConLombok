@@ -1,6 +1,6 @@
 package ar.edu.biblio.factorymethod;
 import ar.edu.biblio.model.Libro;
-public class LibroFisico {
+public class LibroFisico extends Libro {
     private final String titulo;
 
     public LibroFisico(String titulo){
