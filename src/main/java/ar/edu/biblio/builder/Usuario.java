@@ -1,9 +1,7 @@
 package ar.edu.biblio.builder;
-import ar.edu.biblio.abstractfactory.UsuarioFactory;
-import lombok.Builder;
+
 
 import java.time.LocalDate;
-import java.util.Locale;
 
 public class Usuario {
     private final String nombre, email, direccion,telefono;
@@ -14,10 +12,17 @@ public class Usuario {
         this.email = b.email;
         this.direccion = b.direccion;
         this.telefono = b.telefono;
-        this.telefono = b.fechaNacimiento;
+        this.fechaNacimiento = b.fechaNacimiento;
     }
-    public String toString{
-        return  "Usuario{" + nombre + "," + email + "," + direccion +"," + telefono + "," +fechaNacimiento + "}";
+    @Override
+    public String toString() {
+        return "Usuario{" +
+                "nombre='" + nombre + '\'' +
+                ", email='" + email + '\'' +
+                ", direccion='" + direccion + '\'' +
+                ", telefono='" + telefono + '\'' +
+                ", fechaNacimiento=" + fechaNacimiento +
+                '}';
     }
     public static class Builder{
         private String nombre, email, direccion, telefono;
