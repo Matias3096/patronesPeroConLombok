@@ -18,10 +18,14 @@ public class Prestamo implements Cloneable {
         try { return (Prestamo) super.clone();}
         catch (CloneNotSupportedException e){
             throw new RuntimeException(e);}
-        }
-    }
-    public Prestamo conFin(LocalDate fin) {
-        this.fechaFin = fin;
-
     }
 }
+public Prestamo conFin(LocalDate fin) {
+    this.fechaFin = fin;
+    return this;
+}
+
+public String toString() {
+    return "Prestamo{" + libro.titulo() + "," + ", fin= " + fechaFin + fechaFin + "}";}
+    }
+            }
