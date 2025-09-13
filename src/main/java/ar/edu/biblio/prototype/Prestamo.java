@@ -2,20 +2,19 @@ package ar.edu.biblio.prototype;
 
 import ar.edu.biblio.model.Libro;
 import ar.edu.biblio.builder.Usuario;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
 import java.time.LocalDate;
+
+@Data
+@AllArgsConstructor
 
 public class Prestamo implements Cloneable {
     private Libro libro;
     private Usuario usuario;
     private LocalDate fechaInicio;
     private LocalDate fechaFin;
-
-    public Prestamo(Libro libro, Usuario usuario, LocalDate ini, LocalDate fin){
-        this.libro = libro;
-        this.usuario = usuario;
-        this.fechaInicio = ini;
-        this.fechaFin = fin;
-    }
 
     @Override
     public Prestamo clone() {
@@ -31,12 +30,4 @@ public class Prestamo implements Cloneable {
         return this;
     }
 
-    @Override
-    public String toString() {
-        return "Prestamo{" +
-                "libro=" + libro.titulo() +
-                ", usuario=" + usuario +
-                ", fechaFin=" + fechaFin +
-                '}';
-    }
 }

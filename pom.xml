@@ -9,13 +9,12 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <lombok.version>1.18.26</lombok.version>
+        <lombok.version>1.18.32</lombok.version>
     </properties>
 
-    <!-- TODAS las dependencias deben ir aquí -->
     <dependencies>
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -27,7 +26,6 @@
 
     <build>
         <plugins>
-            <!-- Habilita el annotation processing de Lombok en el build de Maven -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -35,6 +33,7 @@
                 <configuration>
                     <source>${maven.compiler.source}</source>
                     <target>${maven.compiler.target}</target>
+                    <release>${maven.compiler.source}</release>
                     <annotationProcessorPaths>
                         <path>
                             <groupId>org.projectlombok</groupId>
